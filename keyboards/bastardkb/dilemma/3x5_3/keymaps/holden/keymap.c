@@ -2,8 +2,8 @@
 
 enum dilemma_keymap_layers {
     LAYER_BASE = 0,
-    LAYER_FUNCTION,
     LAYER_NAVIGATION,
+    LAYER_FUNCTION,
     LAYER_MEDIA,
     LAYER_POINTER,
     LAYER_NUMERAL,
@@ -46,22 +46,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 ESC_MED      , SPC_NAV      , TAB_FUN ,     ENT_SYM , BSP_NUM      , KC_MUTE
 ),
 
-//    ┌──────┬──────┬──────┬──────┬─────┐   ┌──────┬────┬────┬────┬─────┐
-//    │  no  │  no  │  no  │  no  │ no  │   │ pscr │ f7 │ f8 │ f9 │ f12 │
-//    ├──────┼──────┼──────┼──────┼─────┤   ├──────┼────┼────┼────┼─────┤
-//    │ lgui │ lalt │ lctl │ lsft │ no  │   │ sCRL │ f4 │ f5 │ f6 │ f11 │
-//    ├──────┼──────┼──────┼──────┼─────┤   ├──────┼────┼────┼────┼─────┤
-//    │  no  │  no  │  no  │  no  │ no  │   │ paus │ f1 │ f2 │ f3 │ f10 │
-//    └──────┴──────┼──────┼──────┼─────┤   ├──────┼────┼────┼────┴─────┘
-//                  │  no  │  no  │     │   │  no  │ no │ no │
-//                  └──────┴──────┴─────┘   └──────┴────┴────┘
-[LAYER_FUNCTION] = LAYOUT_split_3x5_3(
-  XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     KC_PSCR , KC_F7   , KC_F8   , KC_F9 , KC_F12,
-  KC_LGUI , KC_LALT , KC_LCTL , KC_LSFT , XXXXXXX ,     KC_SCRL , KC_F4   , KC_F5   , KC_F6 , KC_F11,
-  XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     KC_PAUS , KC_F1   , KC_F2   , KC_F3 , KC_F10,
-                      XXXXXXX , XXXXXXX , _______ ,     XXXXXXX , XXXXXXX , XXXXXXX
-),
-
 //    ┌──────┬──────┬──────┬──────┬────┐   ┌──────┬──────┬──────┬──────┬──────┐
 //    │  no  │  no  │  no  │  no  │ no │   │  no  │  no  │  no  │  no  │  no  │
 //    ├──────┼──────┼──────┼──────┼────┤   ├──────┼──────┼──────┼──────┼──────┤
@@ -76,6 +60,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_LGUI , KC_LALT , KC_LCTL , KC_LSFT , XXXXXXX ,     KC_CAPS , KC_LEFT , KC_DOWN , KC_UP   , KC_RGHT,
   XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     KC_INS  , KC_HOME , KC_PGDN , KC_PGUP , KC_END ,
                       XXXXXXX , _______ , XXXXXXX ,     KC_ENT  , KC_BSPC , KC_DEL
+),
+
+//    ┌──────┬──────┬──────┬──────┬─────┐   ┌──────┬────┬────┬────┬─────┐
+//    │  no  │  no  │  no  │  no  │ no  │   │ pscr │ f7 │ f8 │ f9 │ f12 │
+//    ├──────┼──────┼──────┼──────┼─────┤   ├──────┼────┼────┼────┼─────┤
+//    │ lgui │ lalt │ lctl │ lsft │ no  │   │ sCRL │ f4 │ f5 │ f6 │ f11 │
+//    ├──────┼──────┼──────┼──────┼─────┤   ├──────┼────┼────┼────┼─────┤
+//    │  no  │  no  │  no  │  no  │ no  │   │ paus │ f1 │ f2 │ f3 │ f10 │
+//    └──────┴──────┼──────┼──────┼─────┤   ├──────┼────┼────┼────┴─────┘
+//                  │  no  │  no  │     │   │  no  │ no │ no │
+//                  └──────┴──────┴─────┘   └──────┴────┴────┘
+[LAYER_FUNCTION] = LAYOUT_split_3x5_3(
+  XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     KC_PSCR , KC_F7   , KC_F8   , KC_F9 , KC_F12,
+  KC_LGUI , KC_LALT , KC_LCTL , KC_LSFT , XXXXXXX ,     KC_SCRL , KC_F4   , KC_F5   , KC_F6 , KC_F11,
+  XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     KC_PAUS , KC_F1   , KC_F2   , KC_F3 , KC_F10,
+                      XXXXXXX , XXXXXXX , _______ ,     XXXXXXX , XXXXXXX , XXXXXXX
 ),
 
 //    ┌──────┬──────────┬─────────┬─────────┬──────┐   ┌──────┬──────────┬─────────┬─────────┬──────┐
