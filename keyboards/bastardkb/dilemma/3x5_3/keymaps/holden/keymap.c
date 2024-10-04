@@ -30,20 +30,20 @@ enum dilemma_keymap_layers {
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-//    ┌───────────┬───────────┬───────────┬───────────┬─────────┐   ┌─────────┬───────────┬───────────┬───────────┬───────────┐
-//    │     q     │     w     │     f     │     p     │    b    │   │    j    │     l     │     u     │     y     │     '     │
-//    ├───────────┼───────────┼───────────┼───────────┼─────────┤   ├─────────┼───────────┼───────────┼───────────┼───────────┤
-//    │ LGUI_T(a) │ LALT_T(r) │ LCTL_T(s) │ LSFT_T(t) │    g    │   │    m    │ RSFT_T(n) │ RCTL_T(e) │ RALT_T(i) │ RGUI_T(o) │
-//    ├───────────┼───────────┼───────────┼───────────┼─────────┤   ├─────────┼───────────┼───────────┼───────────┼───────────┤
-//    │   PT_Z    │     x     │     c     │     d     │    v    │   │    k    │     h     │     ,     │     .     │  PT_SLSH  │
-//    └───────────┴───────────┼───────────┼───────────┼─────────┤   ├─────────┼───────────┼───────────┼───────────┴───────────┘
-//                            │  ESC_MED  │  SPC_NAV  │ TAB_FUN │   │ ENT_SYM │  BSP_NUM  │   mute    │
-//                            └───────────┴───────────┴─────────┘   └─────────┴───────────┴───────────┘
+//    ┌───────────┬───────────┬───────────┬───────────┬─────────┐   ┌─────────┬───────────┬─────────┬───────────┬───────────┐
+//    │     q     │     w     │     f     │     p     │    b    │   │    j    │     l     │    u    │     y     │     '     │
+//    ├───────────┼───────────┼───────────┼───────────┼─────────┤   ├─────────┼───────────┼─────────┼───────────┼───────────┤
+//    │ LGUI_T(a) │ LALT_T(r) │ LCTL_T(s) │ LSFT_T(t) │    g    │   │    m    │ RSFT_T(n) │  RCTL   │ RALT_T(i) │ RGUI_T(o) │
+//    ├───────────┼───────────┼───────────┼───────────┼─────────┤   ├─────────┼───────────┼─────────┼───────────┼───────────┤
+//    │   PT_Z    │     x     │     c     │     d     │    v    │   │    k    │     h     │    ,    │     .     │  PT_SLSH  │
+//    └───────────┴───────────┼───────────┼───────────┼─────────┤   ├─────────┼───────────┼─────────┼───────────┴───────────┘
+//                            │  ESC_MED  │  SPC_NAV  │ TAB_FUN │   │ ENT_SYM │     e     │ BSP_NUM │
+//                            └───────────┴───────────┴─────────┘   └─────────┴───────────┴─────────┘
 [LAYER_BASE] = LAYOUT_split_3x5_3(
-  KC_Q         , KC_W         , KC_F         , KC_P         , KC_B    ,     KC_J    , KC_L         , KC_U         , KC_Y         , KC_QUOT     ,
-  LGUI_T(KC_A) , LALT_T(KC_R) , LCTL_T(KC_S) , LSFT_T(KC_T) , KC_G    ,     KC_M    , RSFT_T(KC_N) , RCTL_T(KC_E) , RALT_T(KC_I) , RGUI_T(KC_O),
-  PT_Z         , KC_X         , KC_C         , KC_D         , KC_V    ,     KC_K    , KC_H         , KC_COMM      , KC_DOT       , PT_SLSH     ,
-                                ESC_MED      , SPC_NAV      , TAB_FUN ,     ENT_SYM , BSP_NUM      , KC_MUTE
+  KC_Q         , KC_W         , KC_F         , KC_P         , KC_B    ,     KC_J    , KC_L         , KC_U    , KC_Y         , KC_QUOT     ,
+  LGUI_T(KC_A) , LALT_T(KC_R) , LCTL_T(KC_S) , LSFT_T(KC_T) , KC_G    ,     KC_M    , RSFT_T(KC_N) , RCTL    , RALT_T(KC_I) , RGUI_T(KC_O),
+  PT_Z         , KC_X         , KC_C         , KC_D         , KC_V    ,     KC_K    , KC_H         , KC_COMM , KC_DOT       , PT_SLSH     ,
+                                ESC_MED      , SPC_NAV      , TAB_FUN ,     ENT_SYM , KC_E         , BSP_NUM
 ),
 
 //    ┌──────┬──────┬──────┬──────┬────┐   ┌──────┬──────┬──────┬──────┬──────┐
@@ -115,15 +115,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //    ├───┼───┼───┼───┼───┤   ├────┼──────┼──────┼──────┼──────┤
 //    │ ; │ 4 │ 5 │ 6 │ = │   │ no │ lsft │ lctl │ lalt │ lgui │
 //    ├───┼───┼───┼───┼───┤   ├────┼──────┼──────┼──────┼──────┤
-//    │ . │ 1 │ 2 │ 3 │ \ │   │ no │  no  │  no  │  no  │  no  │
+//    │ ` │ 1 │ 2 │ 3 │ \ │   │ no │  no  │  no  │  no  │  no  │
 //    └───┴───┼───┼───┼───┤   ├────┼──────┼──────┼──────┴──────┘
-//            │ . │ - │ 0 │   │ no │      │  no  │
+//            │ . │ 0 │ - │   │ no │      │  no  │
 //            └───┴───┴───┘   └────┴──────┴──────┘
 [LAYER_NUMERAL] = LAYOUT_split_3x5_3(
-  KC_LBRC , KC_7 , KC_8   , KC_9    , KC_RBRC ,     XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX,
-  KC_SCLN , KC_4 , KC_5   , KC_6    , KC_EQL  ,     XXXXXXX , KC_LSFT , KC_LCTL , KC_LALT , KC_LGUI,
-  KC_DOT  , KC_1 , KC_2   , KC_3    , KC_BSLS ,     XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX,
-                   KC_DOT , KC_MINS , KC_0    ,     XXXXXXX , _______ , XXXXXXX
+  KC_LBRC  , KC_7 , KC_8   , KC_9 , KC_RBRC ,     XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX,
+  KC_SCLN  , KC_4 , KC_5   , KC_6 , KC_EQL  ,     XXXXXXX , KC_LSFT , KC_LCTL , KC_LALT , KC_LGUI,
+  KC_GRAVE , KC_1 , KC_2   , KC_3 , KC_BSLS ,     XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX,
+                    KC_DOT , KC_0 , KC_MINS ,     XXXXXXX , _______ , XXXXXXX
 ),
 
 //    ┌───┬───┬───┬───┬───┐   ┌─────┬──────┬──────┬──────┬──────┐
@@ -133,13 +133,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //    ├───┼───┼───┼───┼───┤   ├─────┼──────┼──────┼──────┼──────┤
 //    │ ~ │ ! │ @ │ # │ | │   │ no  │  no  │  no  │  no  │  no  │
 //    └───┴───┼───┼───┼───┤   ├─────┼──────┼──────┼──────┴──────┘
-//            │ ( │ ` │ _ │   │     │  no  │  no  │
+//            │ ( │ ) │ _ │   │     │  no  │  no  │
 //            └───┴───┴───┘   └─────┴──────┴──────┘
 [LAYER_SYMBOLS] = LAYOUT_split_3x5_3(
   KC_LCBR , KC_AMPR , KC_ASTR , KC_LPRN , KC_RCBR ,     XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX,
   KC_COLN , KC_DLR  , KC_PERC , KC_CIRC , KC_PLUS ,     XXXXXXX , KC_LSFT , KC_LCTL , KC_LALT , KC_LGUI,
   KC_TILD , KC_EXLM , KC_AT   , KC_HASH , KC_PIPE ,     XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX,
-                      KC_LPRN , KC_GRV  , KC_UNDS ,     _______ , XXXXXXX , XXXXXXX
+                      KC_LPRN , KC_RPRN , KC_UNDS ,     _______ , XXXXXXX , XXXXXXX
 )
 };
 // clang-format on
