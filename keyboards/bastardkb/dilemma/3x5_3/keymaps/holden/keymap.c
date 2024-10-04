@@ -11,7 +11,7 @@ enum dilemma_keymap_layers {
 };
 
 // Automatically enable sniping-mode on the pointer layer.
-// #define DILEMMA_AUTO_SNIPING_ON_LAYER LAYER_POINTER
+#define DILEMMA_AUTO_SNIPING_ON_LAYER LAYER_POINTER
 
 #define ESC_MED LT(LAYER_MEDIA, KC_ESC)
 #define SPC_NAV LT(LAYER_NAVIGATION, KC_SPC)
