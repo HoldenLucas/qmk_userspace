@@ -37,45 +37,45 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //    ├───────────┼───────────┼───────────┼───────────┼─────────┤   ├─────────┼───────────┼───────────┼───────────┼───────────┤
 //    │   PT_Z    │     x     │     c     │     d     │    v    │   │    k    │     h     │     ,     │     .     │  PT_SLSH  │
 //    └───────────┴───────────┼───────────┼───────────┼─────────┤   ├─────────┼───────────┼───────────┼───────────┴───────────┘
-//                            │  ESC_MED  │  TAB_FUN  │ SPC_NAV │   │ ENT_SYM │  BSP_NUM  │   mute    │
+//                            │  ESC_MED  │  SPC_NAV  │ TAB_FUN │   │ ENT_SYM │  BSP_NUM  │   mute    │
 //                            └───────────┴───────────┴─────────┘   └─────────┴───────────┴───────────┘
 [LAYER_BASE] = LAYOUT_split_3x5_3(
   KC_Q         , KC_W         , KC_F         , KC_P         , KC_B    ,     KC_J    , KC_L         , KC_U         , KC_Y         , KC_QUOT     ,
   LGUI_T(KC_A) , LALT_T(KC_R) , LCTL_T(KC_S) , LSFT_T(KC_T) , KC_G    ,     KC_M    , RSFT_T(KC_N) , RCTL_T(KC_E) , RALT_T(KC_I) , RGUI_T(KC_O),
   PT_Z         , KC_X         , KC_C         , KC_D         , KC_V    ,     KC_K    , KC_H         , KC_COMM      , KC_DOT       , PT_SLSH     ,
-                                ESC_MED      , TAB_FUN      , SPC_NAV ,     ENT_SYM , BSP_NUM      , KC_MUTE
+                                ESC_MED      , SPC_NAV      , TAB_FUN ,     ENT_SYM , BSP_NUM      , KC_MUTE
 ),
 
-//    ┌──────┬──────┬──────┬──────┬────┐   ┌──────┬────┬────┬────┬─────┐
-//    │  no  │  no  │  no  │  no  │ no │   │ pscr │ f7 │ f8 │ f9 │ f12 │
-//    ├──────┼──────┼──────┼──────┼────┤   ├──────┼────┼────┼────┼─────┤
-//    │ lgui │ lalt │ lctl │ lsft │ no │   │ sCRL │ f4 │ f5 │ f6 │ f11 │
-//    ├──────┼──────┼──────┼──────┼────┤   ├──────┼────┼────┼────┼─────┤
-//    │  no  │  no  │  no  │  no  │ no │   │ paus │ f1 │ f2 │ f3 │ f10 │
-//    └──────┴──────┼──────┼──────┼────┤   ├──────┼────┼────┼────┴─────┘
-//                  │  no  │      │ no │   │  no  │ no │ no │
-//                  └──────┴──────┴────┘   └──────┴────┴────┘
+//    ┌──────┬──────┬──────┬──────┬─────┐   ┌──────┬────┬────┬────┬─────┐
+//    │  no  │  no  │  no  │  no  │ no  │   │ pscr │ f7 │ f8 │ f9 │ f12 │
+//    ├──────┼──────┼──────┼──────┼─────┤   ├──────┼────┼────┼────┼─────┤
+//    │ lgui │ lalt │ lctl │ lsft │ no  │   │ sCRL │ f4 │ f5 │ f6 │ f11 │
+//    ├──────┼──────┼──────┼──────┼─────┤   ├──────┼────┼────┼────┼─────┤
+//    │  no  │  no  │  no  │  no  │ no  │   │ paus │ f1 │ f2 │ f3 │ f10 │
+//    └──────┴──────┼──────┼──────┼─────┤   ├──────┼────┼────┼────┴─────┘
+//                  │  no  │  no  │     │   │  no  │ no │ no │
+//                  └──────┴──────┴─────┘   └──────┴────┴────┘
 [LAYER_FUNCTION] = LAYOUT_split_3x5_3(
   XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     KC_PSCR , KC_F7   , KC_F8   , KC_F9 , KC_F12,
   KC_LGUI , KC_LALT , KC_LCTL , KC_LSFT , XXXXXXX ,     KC_SCRL , KC_F4   , KC_F5   , KC_F6 , KC_F11,
   XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     KC_PAUS , KC_F1   , KC_F2   , KC_F3 , KC_F10,
-                      XXXXXXX , _______ , XXXXXXX ,     XXXXXXX , XXXXXXX , XXXXXXX
+                      XXXXXXX , XXXXXXX , _______ ,     XXXXXXX , XXXXXXX , XXXXXXX
 ),
 
-//    ┌──────┬──────┬──────┬──────┬─────┐   ┌──────┬──────┬──────┬──────┬──────┐
-//    │  no  │  no  │  no  │  no  │ no  │   │  no  │  no  │  no  │  no  │  no  │
-//    ├──────┼──────┼──────┼──────┼─────┤   ├──────┼──────┼──────┼──────┼──────┤
-//    │ lgui │ lalt │ lctl │ lsft │ no  │   │ caps │ left │ down │  up  │ rght │
-//    ├──────┼──────┼──────┼──────┼─────┤   ├──────┼──────┼──────┼──────┼──────┤
-//    │  no  │  no  │  no  │  no  │ no  │   │ ins  │ home │ pgdn │ pgup │ end  │
-//    └──────┴──────┼──────┼──────┼─────┤   ├──────┼──────┼──────┼──────┴──────┘
-//                  │  no  │  no  │     │   │ ent  │ bspc │ del  │
-//                  └──────┴──────┴─────┘   └──────┴──────┴──────┘
+//    ┌──────┬──────┬──────┬──────┬────┐   ┌──────┬──────┬──────┬──────┬──────┐
+//    │  no  │  no  │  no  │  no  │ no │   │  no  │  no  │  no  │  no  │  no  │
+//    ├──────┼──────┼──────┼──────┼────┤   ├──────┼──────┼──────┼──────┼──────┤
+//    │ lgui │ lalt │ lctl │ lsft │ no │   │ caps │ left │ down │  up  │ rght │
+//    ├──────┼──────┼──────┼──────┼────┤   ├──────┼──────┼──────┼──────┼──────┤
+//    │  no  │  no  │  no  │  no  │ no │   │ ins  │ home │ pgdn │ pgup │ end  │
+//    └──────┴──────┼──────┼──────┼────┤   ├──────┼──────┼──────┼──────┴──────┘
+//                  │  no  │      │ no │   │ ent  │ bspc │ del  │
+//                  └──────┴──────┴────┘   └──────┴──────┴──────┘
 [LAYER_NAVIGATION] = LAYOUT_split_3x5_3(
   XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX,
   KC_LGUI , KC_LALT , KC_LCTL , KC_LSFT , XXXXXXX ,     KC_CAPS , KC_LEFT , KC_DOWN , KC_UP   , KC_RGHT,
   XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     KC_INS  , KC_HOME , KC_PGDN , KC_PGUP , KC_END ,
-                      XXXXXXX , XXXXXXX , _______ ,     KC_ENT  , KC_BSPC , KC_DEL
+                      XXXXXXX , _______ , XXXXXXX ,     KC_ENT  , KC_BSPC , KC_DEL
 ),
 
 //    ┌──────┬──────────┬─────────┬─────────┬──────┐   ┌──────┬──────────┬─────────┬─────────┬──────┐
