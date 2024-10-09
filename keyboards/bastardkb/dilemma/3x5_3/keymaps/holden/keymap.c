@@ -32,31 +32,31 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //    ├───────────┼───────────┼───────────┼───────────┼─────────┤   ├─────────┼───────────┼───────────┼───────────┼───────────┤
 //    │ LGUI_T(a) │ LALT_T(r) │ LCTL_T(s) │ LSFT_T(t) │    g    │   │    m    │ RSFT_T(n) │ RCTL_T(e) │ RALT_T(i) │ RGUI_T(o) │
 //    ├───────────┼───────────┼───────────┼───────────┼─────────┤   ├─────────┼───────────┼───────────┼───────────┼───────────┤
-//    │   PT_Z    │     x     │     c     │     d     │    v    │   │    k    │     h     │     ,     │     .     │    no     │
+//    │   PT_Z    │     x     │     c     │     d     │    v    │   │    k    │     h     │     ,     │     .     │     /     │
 //    └───────────┴───────────┼───────────┼───────────┼─────────┤   ├─────────┼───────────┼───────────┼───────────┴───────────┘
 //                            │    no     │    tab    │ SPC_NAV │   │ BSP_SYM │    no     │    no     │
 //                            └───────────┴───────────┴─────────┘   └─────────┴───────────┴───────────┘
 [LAYER_BASE] = LAYOUT_split_3x5_3(
   KC_Q         , KC_W         , KC_F         , KC_P         , KC_B    ,     KC_J    , KC_L         , KC_U         , KC_Y         , KC_QUOT     ,
   LGUI_T(KC_A) , LALT_T(KC_R) , LCTL_T(KC_S) , LSFT_T(KC_T) , KC_G    ,     KC_M    , RSFT_T(KC_N) , RCTL_T(KC_E) , RALT_T(KC_I) , RGUI_T(KC_O),
-  PT_Z         , KC_X         , KC_C         , KC_D         , KC_V    ,     KC_K    , KC_H         , KC_COMM      , KC_DOT       , XXXXXXX     ,
+  PT_Z         , KC_X         , KC_C         , KC_D         , KC_V    ,     KC_K    , KC_H         , KC_COMM      , KC_DOT       , KC_SLSH     ,
                                 XXXXXXX      , KC_TAB       , SPC_NAV ,     BSP_SYM , XXXXXXX      , XXXXXXX
 ),
 
-//    ┌──────┬───────────┬────────┬──────┬─────┐   ┌─────┬──────┬──────┬──────┬──────┐
-//    │  no  │ S(A(tab)) │ A(tab) │  no  │ no  │   │ no  │  no  │  no  │  no  │  no  │
-//    ├──────┼───────────┼────────┼──────┼─────┤   ├─────┼──────┼──────┼──────┼──────┤
-//    │ lgui │   lalt    │  lctl  │ lsft │ no  │   │ no  │ left │ down │  up  │ rght │
-//    ├──────┼───────────┼────────┼──────┼─────┤   ├─────┼──────┼──────┼──────┼──────┤
-//    │  no  │ S(C(tab)) │ C(tab) │  no  │ no  │   │ no  │ home │ pgdn │ pgup │ end  │
-//    └──────┴───────────┼────────┼──────┼─────┤   ├─────┼──────┼──────┼──────┴──────┘
-//                       │   no   │  no  │     │   │     │  no  │  no  │
-//                       └────────┴──────┴─────┘   └─────┴──────┴──────┘
+//    ┌──────┬───────────┬────────┬──────┬─────┐   ┌────┬──────┬──────┬──────┬──────┐
+//    │  no  │ S(A(tab)) │ A(tab) │  no  │ no  │   │ no │  no  │  no  │  no  │  no  │
+//    ├──────┼───────────┼────────┼──────┼─────┤   ├────┼──────┼──────┼──────┼──────┤
+//    │ lgui │   lalt    │  lctl  │ lsft │ no  │   │ no │ left │ down │  up  │ rght │
+//    ├──────┼───────────┼────────┼──────┼─────┤   ├────┼──────┼──────┼──────┼──────┤
+//    │  no  │ S(C(tab)) │ C(tab) │  no  │ no  │   │ no │ home │ pgdn │ pgup │ end  │
+//    └──────┴───────────┼────────┼──────┼─────┤   ├────┼──────┼──────┼──────┴──────┘
+//                       │   no   │  no  │     │   │ no │  no  │  no  │
+//                       └────────┴──────┴─────┘   └────┴──────┴──────┘
 [LAYER_NAV] = LAYOUT_split_3x5_3(
   XXXXXXX , S(A(KC_TAB)) , A(KC_TAB) , XXXXXXX , XXXXXXX ,     XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX,
   KC_LGUI , KC_LALT      , KC_LCTL   , KC_LSFT , XXXXXXX ,     XXXXXXX , KC_LEFT , KC_DOWN , KC_UP   , KC_RGHT,
   XXXXXXX , S(C(KC_TAB)) , C(KC_TAB) , XXXXXXX , XXXXXXX ,     XXXXXXX , KC_HOME , KC_PGDN , KC_PGUP , KC_END ,
-                           XXXXXXX   , XXXXXXX , _______ ,     _______ , XXXXXXX , XXXXXXX
+                           XXXXXXX   , XXXXXXX , _______ ,     XXXXXXX , XXXXXXX , XXXXXXX
 ),
 
 //    ┌──────┬──────┬──────┬──────┬─────┐   ┌──────┬────┬────┬────┬─────┐
@@ -91,20 +91,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       KC_BTN3 , KC_BTN2 , KC_BTN1 ,     KC_BTN1 , KC_BTN2 , KC_BTN3
 ),
 
-//    ┌────┬────┬────┬────┬─────┐   ┌─────┬────┬────┬───┬────┐
-//    │ no │ @  │ #  │ $  │ no  │   │ no  │ 7  │ 8  │ 9 │ no │
-//    ├────┼────┼────┼────┼─────┤   ├─────┼────┼────┼───┼────┤
-//    │ !  │ =  │ _  │ -  │  %  │   │  /  │ 4  │ 5  │ 6 │ ,  │
-//    ├────┼────┼────┼────┼─────┤   ├─────┼────┼────┼───┼────┤
-//    │ +  │ no │ *  │ &  │  ^  │   │  0  │ 1  │ 2  │ 3 │ .  │
-//    └────┴────┼────┼────┼─────┤   ├─────┼────┼────┼───┴────┘
-//              │ no │ no │     │   │     │ no │ no │
-//              └────┴────┴─────┘   └─────┴────┴────┘
+//    ┌───┬────┬────┬───┬───┐   ┌─────┬───────────┬───────────┬───────────┬───────────┐
+//    │ [ │ @  │ #  │ $ │ ] │   │ no  │     7     │     8     │     9     │    no     │
+//    ├───┼────┼────┼───┼───┤   ├─────┼───────────┼───────────┼───────────┼───────────┤
+//    │ ! │ =  │ _  │ - │ % │   │  /  │ RSFT_T(4) │ RSFT_T(5) │ RCTL_T(6) │ RALT_T(,) │
+//    ├───┼────┼────┼───┼───┤   ├─────┼───────────┼───────────┼───────────┼───────────┤
+//    │ + │ no │ *  │ & │ ^ │   │  0  │     1     │     2     │     3     │     .     │
+//    └───┴────┼────┼───┼───┤   ├─────┼───────────┼───────────┼───────────┴───────────┘
+//             │ no │ ( │ ) │   │     │    no     │    no     │
+//             └────┴───┴───┘   └─────┴───────────┴───────────┘
 [LAYER_SYM] = LAYOUT_split_3x5_3(
-  XXXXXXX , KC_AT   , KC_HASH , KC_DLR  , XXXXXXX ,     XXXXXXX , KC_7    , KC_8    , KC_9 , XXXXXXX,
-  KC_EXLM , KC_EQL  , KC_UNDS , KC_MINS , KC_PERC ,     KC_SLSH , KC_4    , KC_5    , KC_6 , KC_COMM,
-  KC_PLUS , XXXXXXX , KC_ASTR , KC_AMPR , KC_CIRC ,     KC_0    , KC_1    , KC_2    , KC_3 , KC_DOT ,
-                      XXXXXXX , XXXXXXX , _______ ,     _______ , XXXXXXX , XXXXXXX
+  KC_LBRC , KC_AT   , KC_HASH , KC_DLR  , KC_RBRC ,     XXXXXXX , KC_7         , KC_8         , KC_9         , XXXXXXX        ,
+  KC_EXLM , KC_EQL  , KC_UNDS , KC_MINS , KC_PERC ,     KC_SLSH , RSFT_T(KC_4) , RSFT_T(KC_5) , RCTL_T(KC_6) , RALT_T(KC_COMM),
+  KC_PLUS , XXXXXXX , KC_ASTR , KC_AMPR , KC_CIRC ,     KC_0    , KC_1         , KC_2         , KC_3         , KC_DOT         ,
+                      XXXXXXX , KC_LPRN , KC_RPRN ,     _______ , XXXXXXX      , XXXXXXX
 )
 };
 // clang-format on
