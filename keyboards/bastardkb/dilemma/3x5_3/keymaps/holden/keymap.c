@@ -43,20 +43,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 XXXXXXX      , KC_TAB       , SPC_NAV ,     BSP_SYM , XXXXXXX      , XXXXXXX
 ),
 
-//    ┌──────┬───────────┬────────┬──────┬─────┐   ┌────┬──────┬──────┬──────┬──────┐
-//    │  no  │ S(A(tab)) │ A(tab) │  no  │ no  │   │ no │  no  │  no  │  no  │  no  │
-//    ├──────┼───────────┼────────┼──────┼─────┤   ├────┼──────┼──────┼──────┼──────┤
-//    │ lgui │   lalt    │  lctl  │ lsft │ no  │   │ no │ left │ down │  up  │ rght │
-//    ├──────┼───────────┼────────┼──────┼─────┤   ├────┼──────┼──────┼──────┼──────┤
-//    │  no  │ S(C(tab)) │ C(tab) │  no  │ no  │   │ no │ home │ pgdn │ pgup │ end  │
-//    └──────┴───────────┼────────┼──────┼─────┤   ├────┼──────┼──────┼──────┴──────┘
-//                       │   no   │  no  │     │   │ no │  no  │  no  │
-//                       └────────┴──────┴─────┘   └────┴──────┴──────┘
+//    ┌──────┬───────────┬───────────┬──────┬─────┐   ┌────┬──────┬──────┬──────┬──────┐
+//    │  no  │  C(tab)   │  A(tab)   │  no  │ no  │   │ no │  no  │  no  │  no  │  no  │
+//    ├──────┼───────────┼───────────┼──────┼─────┤   ├────┼──────┼──────┼──────┼──────┤
+//    │ lgui │   lalt    │   lctl    │ lsft │ no  │   │ no │ left │ down │  up  │ rght │
+//    ├──────┼───────────┼───────────┼──────┼─────┤   ├────┼──────┼──────┼──────┼──────┤
+//    │  no  │ S(C(tab)) │ S(A(tab)) │  no  │ no  │   │ no │ home │ pgdn │ pgup │ end  │
+//    └──────┴───────────┼───────────┼──────┼─────┤   ├────┼──────┼──────┼──────┴──────┘
+//                       │    no     │  no  │     │   │ no │  no  │  no  │
+//                       └───────────┴──────┴─────┘   └────┴──────┴──────┘
 [LAYER_NAV] = LAYOUT_split_3x5_3(
-  XXXXXXX , S(A(KC_TAB)) , A(KC_TAB) , XXXXXXX , XXXXXXX ,     XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX,
-  KC_LGUI , KC_LALT      , KC_LCTL   , KC_LSFT , XXXXXXX ,     XXXXXXX , KC_LEFT , KC_DOWN , KC_UP   , KC_RGHT,
-  XXXXXXX , S(C(KC_TAB)) , C(KC_TAB) , XXXXXXX , XXXXXXX ,     XXXXXXX , KC_HOME , KC_PGDN , KC_PGUP , KC_END ,
-                           XXXXXXX   , XXXXXXX , _______ ,     XXXXXXX , XXXXXXX , XXXXXXX
+  XXXXXXX , C(KC_TAB)    , A(KC_TAB)    , XXXXXXX , XXXXXXX ,     XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX,
+  KC_LGUI , KC_LALT      , KC_LCTL      , KC_LSFT , XXXXXXX ,     XXXXXXX , KC_LEFT , KC_DOWN , KC_UP   , KC_RGHT,
+  XXXXXXX , S(C(KC_TAB)) , S(A(KC_TAB)) , XXXXXXX , XXXXXXX ,     XXXXXXX , KC_HOME , KC_PGDN , KC_PGUP , KC_END ,
+                           XXXXXXX      , XXXXXXX , _______ ,     XXXXXXX , XXXXXXX , XXXXXXX
 ),
 
 //    ┌──────┬──────┬──────┬──────┬─────┐   ┌──────┬────┬────┬────┬─────┐
@@ -91,20 +91,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                       KC_BTN3 , KC_BTN2 , KC_BTN1 ,     KC_BTN1 , KC_BTN2 , KC_BTN3
 ),
 
-//    ┌───┬────┬────┬───┬───┐   ┌─────┬───────────┬───────────┬───────────┬───────────┐
-//    │ [ │ @  │ #  │ $ │ ] │   │ no  │     7     │     8     │     9     │    no     │
-//    ├───┼────┼────┼───┼───┤   ├─────┼───────────┼───────────┼───────────┼───────────┤
-//    │ ! │ =  │ _  │ - │ % │   │  /  │ RSFT_T(4) │ RSFT_T(5) │ RCTL_T(6) │ RALT_T(,) │
-//    ├───┼────┼────┼───┼───┤   ├─────┼───────────┼───────────┼───────────┼───────────┤
-//    │ + │ no │ *  │ & │ ^ │   │  0  │     1     │     2     │     3     │     .     │
-//    └───┴────┼────┼───┼───┤   ├─────┼───────────┼───────────┼───────────┴───────────┘
-//             │ no │ ( │ ) │   │     │    no     │    no     │
-//             └────┴───┴───┘   └─────┴───────────┴───────────┘
+//    ┌───┬───┬────┬───┬───┐   ┌─────┬───────────┬───────────┬───────────┬───────────┐
+//    │ [ │ @ │ *  │ $ │ ] │   │ no  │     7     │     8     │     9     │    no     │
+//    ├───┼───┼────┼───┼───┤   ├─────┼───────────┼───────────┼───────────┼───────────┤
+//    │ ! │ = │ _  │ - │ % │   │  /  │ RSFT_T(4) │ RSFT_T(5) │ RCTL_T(6) │ RALT_T(,) │
+//    ├───┼───┼────┼───┼───┤   ├─────┼───────────┼───────────┼───────────┼───────────┤
+//    │ + │ ` │ #  │ & │ ^ │   │  0  │     1     │     2     │     3     │     .     │
+//    └───┴───┼────┼───┼───┤   ├─────┼───────────┼───────────┼───────────┴───────────┘
+//            │ no │ ( │ ) │   │     │    no     │    no     │
+//            └────┴───┴───┘   └─────┴───────────┴───────────┘
 [LAYER_SYM] = LAYOUT_split_3x5_3(
-  KC_LBRC , KC_AT   , KC_HASH , KC_DLR  , KC_RBRC ,     XXXXXXX , KC_7         , KC_8         , KC_9         , XXXXXXX        ,
-  KC_EXLM , KC_EQL  , KC_UNDS , KC_MINS , KC_PERC ,     KC_SLSH , RSFT_T(KC_4) , RSFT_T(KC_5) , RCTL_T(KC_6) , RALT_T(KC_COMM),
-  KC_PLUS , XXXXXXX , KC_ASTR , KC_AMPR , KC_CIRC ,     KC_0    , KC_1         , KC_2         , KC_3         , KC_DOT         ,
-                      XXXXXXX , KC_LPRN , KC_RPRN ,     _______ , XXXXXXX      , XXXXXXX
+  KC_LBRC , KC_AT  , KC_ASTR , KC_DLR  , KC_RBRC ,     XXXXXXX , KC_7         , KC_8         , KC_9         , XXXXXXX        ,
+  KC_EXLM , KC_EQL , KC_UNDS , KC_MINS , KC_PERC ,     KC_SLSH , RSFT_T(KC_4) , RSFT_T(KC_5) , RCTL_T(KC_6) , RALT_T(KC_COMM),
+  KC_PLUS , KC_GRV , KC_HASH , KC_AMPR , KC_CIRC ,     KC_0    , KC_1         , KC_2         , KC_3         , KC_DOT         ,
+                     XXXXXXX , KC_LPRN , KC_RPRN ,     _______ , XXXXXXX      , XXXXXXX
 )
 };
 // clang-format on
