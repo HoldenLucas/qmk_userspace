@@ -1,12 +1,15 @@
 COMB(ENTER, KC_ENT, RCTL_T(KC_E), RALT_T(KC_I))
 COMB(ESCAPE, KC_ESC, LALT_T(KC_R) , LCTL_T(KC_S))
 
-COMB(SCLN, KC_SCLN, KC_L, KC_U) // semicolon
-
 COMB(GRV, KC_GRV, KC_U, KC_Y)
 
 COMB(BSLS, KC_BSLS, LCTL_T(KC_S), KC_C) // vertical: LM2+LB2 (urob location)
 
 COMB(FSLH, KC_SLSH, RCTL_T(KC_E), KC_COMM) // vertical: RM2+RB2 (urob location)
+
+// clipboard (urob): left bottom row z x c d v -- OS-aware (Cmd on macOS)
+COMB(CUT,   U_CUT,   KC_X, KC_D) // LB3+LB1
+COMB(COPY,  U_COPY,  KC_X, KC_C) // LB3+LB2
+COMB(PASTE, U_PASTE, KC_C, KC_D) // LB2+LB1
 
 COMB(FUN, OSL(LAYER_FUN), SPC_NAV, BSP_SYM)

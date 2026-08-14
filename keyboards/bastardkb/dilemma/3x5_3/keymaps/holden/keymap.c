@@ -8,6 +8,10 @@ enum dilemma_keymap_layers {
     LAYER_PNT,
 };
 
+enum custom_keycodes {
+    QEXCL = SAFE_RANGE, // tap: ? | shift+tap: !  (urob's qexcl mod-morph)
+};
+
 #define DILEMMA_AUTO_SNIPING_ON_LAYER LAYER_PNT
 
 // custom keys
@@ -39,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [LAYER_BASE] = LAYOUT_split_3x5_3(
   KC_Q         , KC_W         , KC_F         , KC_P         , KC_B    ,     KC_J    , KC_L         , KC_U         , KC_Y         , KC_QUOT     ,
   LGUI_T(KC_A) , LALT_T(KC_R) , LCTL_T(KC_S) , LSFT_T(KC_T) , KC_G    ,     KC_M    , RSFT_T(KC_N) , RCTL_T(KC_E) , RALT_T(KC_I) , RGUI_T(KC_O),
-  PT_Z         , KC_X         , KC_C         , KC_D         , KC_V    ,     KC_K    , KC_H         , KC_COMM      , KC_DOT       , KC_SLSH     ,
+  PT_Z         , KC_X         , KC_C         , KC_D         , KC_V    ,     KC_K    , KC_H         , KC_COMM      , KC_DOT       , QEXCL       ,
                                 XXXXXXX      , KC_TAB       , SPC_NAV ,     BSP_SYM , XXXXXXX      , XXXXXXX
 ),
 
@@ -88,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   XXXXXXX , EE_CLR  , XXXXXXX , XXXXXXX , XXXXXXX ,     XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX,
   KC_LGUI , KC_LALT , KC_LCTL , KC_LSFT , XXXXXXX ,     XXXXXXX , KC_LSFT , KC_LCTL , KC_LALT , KC_LGUI,
   _______ , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX ,     XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX , XXXXXXX,
-                      KC_BTN3 , KC_BTN2 , KC_BTN1 ,     KC_BTN1 , KC_BTN2 , KC_BTN3
+                      MS_BTN3 , MS_BTN2 , MS_BTN1 ,     MS_BTN1 , MS_BTN2 , MS_BTN3
 ),
 
 //    ┌───┬───┬────┬───┬───┐   ┌─────┬───────────┬───────────┬───────────┬───────────┐
@@ -108,6 +112,40 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 )
 };
 // clang-format on
+
+// Track the time of the last key press so we can gate combos that overlap the
+// home row. combo_should_trigger() below rejects those combos when a key was
+// pressed within COMBO_HRM_IDLE_MS, i.e. you're mid-typing.
+static uint16_t last_keypress_timer = 0;
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    if (record->event.pressed) {
+        last_keypress_timer = record->event.time;
+
+        if (keycode == QEXCL) {
+            if (get_mods() & MOD_MASK_SHIFT) {
+                tap_code(KC_1);      // shift already held -> '!'
+            } else {
+                tap_code16(KC_QUES); // shift+/ -> '?'
+            }
+            return false;
+        }
+    }
+    return true;
+}
+
+#ifdef COMBO_SHOULD_TRIGGER
+bool combo_should_trigger(uint16_t combo_index, combo_t *combo, uint16_t keycode, keyrecord_t *record) {
+    switch (combo_index) {
+        // Home row combos: only fire after a brief idle so fast rolls
+        // (e/i -> Enter, r/s -> Escape) don't misfire while typing.
+        case C_ENTER:
+        case C_ESCAPE:
+            return timer_elapsed(last_keypress_timer) >= COMBO_HRM_IDLE_MS;
+    }
+    return true;
+}
+#endif // COMBO_SHOULD_TRIGGER
 
 #ifdef POINTING_DEVICE_ENABLE
 #    ifdef DILEMMA_AUTO_SNIPING_ON_LAYER
